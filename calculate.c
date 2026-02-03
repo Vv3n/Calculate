@@ -18,9 +18,14 @@ int main() {
         if (!isdigit(input[i]) || input[i + 1] == '\0') {
 
             if (op == '+') result += current;
-
+            else if (op == '-') result -= current;
+            else if (op == '*') result= current;
+            else if (op == '/') result /= current;
+            else if (op == '%') result %= current;
+            
             op = input[i];
             current = 0;
+
         }
     }
     
