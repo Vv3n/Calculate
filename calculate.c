@@ -3,32 +3,41 @@
 
 int main() {
     char input[256];
-    int result = 0;
-    int current = 0;
-    char op = '+'; 
-    
-    scanf("%s", input);
 
-    for (int i = 0; input[i] != '\0'; i++) {
+    while (1) {
+        int result = 0;
+        int current = 0;
+        char op = '+';
 
-        if (isdigit(input[i])) {
-            current = current * 10 + (input[i] - '0');
+        printf("Enter Your Equation (type off to exit): ");
+        scanf("%s", input);
+
+        if (strcmp(input, "off") == 0) {
+            printf("Goodbye.\n");
+            break;
         }
 
-        if (!isdigit(input[i]) || input[i + 1] == '\0') {
+        for (int i = 0; input[i] != '\0'; i++) {
 
-            if (op == '+') result += current;
-            else if (op == '-') result -= current;
-            else if (op == '*') result *= current;
-            else if (op == '/') result /= current;
-            else if (op == '%') result %= current;
-            
-            op = input[i];
-            current = 0;
+            if (isdigit(input[i])) {
+                current = current * 10 + (input[i] - '0');
+            }
 
+            if (!isdigit(input[i]) || input[i + 1] == '\0') {
+
+                if (op == '+') result += current;
+                else if (op == '-') result -= current;
+                else if (op == '*') result *= current;
+                else if (op == '/') result /= current;
+                else if (op == '%') result %= current;
+
+                op = input[i];
+                current = 0;
+            }
         }
+
+        printf("Result = %d\n\n", result);
     }
-    
-    printf("Result = %d\n\n", result);
+
     return 0;
 }
