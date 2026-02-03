@@ -19,7 +19,7 @@ int main() {
 
             if (op == '+') result += current;
             else if (op == '-') result -= current;
-            else if (op == '*') result= current;
+            else if (op == '*') result *= current;
             else if (op == '/') result /= current;
             else if (op == '%') result %= current;
             
