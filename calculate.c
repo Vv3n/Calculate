@@ -40,6 +40,7 @@ int main() {
         printf("Result = %d\n\n", result);
         printf("Result2 = %d\n\n", result);
         printf("Result4 = %d\n\n", result);
+        printf("Result3 = %d\n\n", result);
     }
 
     return 0;
